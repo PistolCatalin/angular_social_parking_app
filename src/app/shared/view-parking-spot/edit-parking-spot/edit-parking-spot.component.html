@@ -1,0 +1,19 @@
+<h2>Booking Parking Spot</h2>
+  <form [formGroup]="reserveForm">
+    <mat-form-field style="padding-left: 5px;" class="w-100" >
+      <mat-label>Booking time</mat-label>
+      <mat-select [(value)]="selected" formControlName="type">
+        <mat-option value="2">2 min</mat-option>
+          <mat-option value="30">30 minutes</mat-option>
+          <mat-option value="60">1 hour</mat-option>
+          <mat-option value="90">1 hour 30 minutes</mat-option>
+          <mat-option value="120">2 hours</mat-option>
+          <mat-option value="150">2 hours 30 minutes</mat-option>
+          <mat-option value="180">3 hours</mat-option>
+          <mat-option value="240">4 hours</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <button mat-raised-button type="submit"  class="Cancel-btn" (click)="cancel()">Cancel</button>
+  <button mat-raised-button type="button" color="primary" class="Delete-btn  float-right" (click)="reserve()">Reserve</button>
+

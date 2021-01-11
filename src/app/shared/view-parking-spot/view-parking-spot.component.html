@@ -1,0 +1,44 @@
+<div>
+    <div class="add-title">
+      <h2 class="primary">View Details</h2>
+    </div>
+    <div>
+      <!-- <form [formGroup]="updateForm">
+    </form> -->
+
+            <div class="mb-5">
+                <mat-card-subtitle>Event Type</mat-card-subtitle>
+                <mat-card>{{addEvent.type}}</mat-card>
+            </div>
+            <div class="mb-5">
+                <mat-card-subtitle>Status</mat-card-subtitle>
+                <mat-card>{{addEvent.status}}</mat-card>
+            </div>
+            <div class="mb-5">
+                <mat-card-subtitle>Price</mat-card-subtitle>
+                <mat-card>{{addEvent.price}} $</mat-card>
+            </div>
+            <div class="mb-5">
+                <mat-card-subtitle>Longitude</mat-card-subtitle>
+                <mat-card>{{addEvent.longitutde}}</mat-card>
+            </div>
+            <div class="mb-5">
+                <mat-card-subtitle>Latitude</mat-card-subtitle>
+                <mat-card>{{addEvent.latitude}}</mat-card>
+            </div>
+            <div class="mb-5">
+                <mat-card-subtitle>Description</mat-card-subtitle>
+                <mat-card>{{addEvent.description}}</mat-card>
+            </div>
+            <div class="row ">
+                <div class="col-md-2">
+                    <button mat-raised-button type="button" class="Discard-btn" (click)="closeDialog()">Cancel</button>
+                </div>
+                
+                <div *ngIf="show === 'Free'" class="col-md-10" >
+                    <button mat-raised-button type="submit" style="float: right;" color="primary"  (click)="openDialog()" class="Update-btn">Reserve</button>
+                </div>
+            </div>
+    </div>
+  </div>
+  

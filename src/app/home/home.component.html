@@ -1,0 +1,31 @@
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div class="row">
+    <div class="col-md-8 p-3 pl-5">
+        <div  id="mapid"></div>
+        <div class="legend">
+            <div class="legend-item mb-2">
+                <div class="circle" style="background:#47b8f5"></div>
+                <div class="legend-text">Parking Place</div>
+            </div>
+            <div class="legend-item mb-2">
+                <div class="circle" style="background:rgb(202, 185, 110)"></div>
+                <div class="legend-text">Reserved</div>
+            </div>
+            <div class="legend-item mb-2">
+                <div class="circle" style="background:orange"></div>
+                <div class="legend-text">Illegal Parking Place</div>
+            </div>
+            <div class="legend-item">
+                <div class="circle"></div>
+                <div class="legend-text">Abandoned Vehicles</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <app-side-bar [mymap]="mymap"></app-side-bar>
+    </div>
+    <div class="col-md-8 p-3 pl-5">
+        <app-chart></app-chart>
+    </div>
+</div>

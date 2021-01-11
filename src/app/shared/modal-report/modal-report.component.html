@@ -1,0 +1,64 @@
+<div>
+    <div class="add-title">
+      <h2 class="primary">Add Event</h2>
+    </div>
+    <div>
+      <form [formGroup]="addEvent">
+        <mat-form-field style="padding-left: 5px;" >
+            <mat-label>Select type of Event</mat-label>
+            <mat-select [(value)]="selected" formControlName="type">
+                <mat-option>None</mat-option>
+                <mat-option value="Parking Place">Add Parking Place</mat-option>
+                <mat-option value="Illegal Parking">Illegal Parking</mat-option>
+                <!-- <mat-option value="Non-payment of parking space">Non-payment of parking space</mat-option> -->
+                <mat-option value="Abandoned vehicle">Abandoned vehicle</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-grid-list cols="1" [cols]="breakpoint" rowHeight="85px" (window:resize)="onResize($event)">
+         <mat-grid-tile>
+            <div class="text-inside">
+              <mat-form-field >
+                <input matInput placeholder="Latitude" [formControlName]="'latitude'" value={{latitude}} formControlName="latitude" required readonly>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="text-inside">
+              <mat-form-field >
+                <input matInput placeholder="Longitute" value={{longitutde}} [formControlName]="'longitutde'" required readonly>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field >
+              <mat-label>Price</mat-label>
+              <input matInput type="number" class="example-right-align" value={{price}} formControlName="price">
+              <span matPrefix>$&nbsp;</span>
+              <span matSuffix>.00</span>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile >
+            <div class="text-inside">
+              <mat-form-field>
+                <textarea rows="5" matInput placeholder="Desciption" formControlName="description"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <!-- <mat-grid-tile>
+            <div class="text-inside">
+              <mat-radio-group class="gender">
+                <div style="color:grey;">Gender</div>
+                <mat-radio-button color="primary" style="padding:4px 4px 0px 0px;" value="1">Male</mat-radio-button>
+                <mat-radio-button  color="primary" style="padding:4px 0px 0px 24px;" value="2">Female</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </mat-grid-tile> -->
+        </mat-grid-list>
+        <div class="btn-sec">
+          <button mat-raised-button type="submit" color="primary" (click)="submitEvent()" class="Update-btn">Save</button>
+          <button mat-raised-button type="button" class="Discard-btn" (click)="openDialog()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

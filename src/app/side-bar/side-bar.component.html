@@ -1,0 +1,22 @@
+<div class="sidebar">
+    <img src="https://www.redditstatic.com/desktop2x/img/id-cards/home-banner@2x.png">
+    <div style="text-align: center; font-size: 1em">Welcome to the Social Parking App. Check for the actions below</div>
+    <div class="row" style="font-size: 15px; color: #313131;" *ngFor="let event of eventHistory">
+        
+        
+        <div class="col-md-12 mt-3" style="border-bottom: 1px solid #313131;">
+            <div  class="event-header">Event has been detected:</div>
+            <div>User <b>{{event.username}}</b> has <a href="#" (click)="focus( + event.longitutde,+ event.latitude)">{{event.subject}}</a></div>
+            <div class="row" style="font-weight:bold;">
+                <div class="col-md-6 d-table mt-2">
+                    <label>Status</label>
+                    <div class="default {{event.status}}" >{{event.status}}</div>
+                </div>
+                <div class="col-md-6 d-table mt-2">
+                    <label><b>Timestamp</b></label>
+                    <div style="color:blue">{{event.timestamp}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
